@@ -12,8 +12,6 @@ batch_size = 512
 learning_rate = 0.01
 epochs = 4
 
-np.set_printoptions(threshold=sys.maxsize)
-
 
 gpus = tf.config.experimental.list_physical_devices('GPU')
 if gpus:
