@@ -65,6 +65,7 @@ model = Sequential([
 ])
 
 crossentropy = tf.keras.losses.categorical_crossentropy
+optimizer = tf.keras.optimizers.Adam(learning_rate=learning_rate)
 
 @tf.function
 def apply_gradients(images, labels):
@@ -75,8 +76,7 @@ def apply_gradients(images, labels):
     optimizer.apply_gradients(zip(gradients, model.trainable_variables))
     return loss
 
-optimizer = tf.keras.optimizers.Adam(learning_rate=learning_rate)
-
+  
 loss_average = tf.keras.metrics.Mean()
 accuracy = tf.keras.metrics.CategoricalAccuracy()
 for epoch in range(epochs): 
