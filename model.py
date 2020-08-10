@@ -10,7 +10,7 @@ import sys
 
 batch_size = 512
 learning_rate = 0.01
-epochs = 4
+epochs = 8
 
 
 gpus = tf.config.experimental.list_physical_devices('GPU')
